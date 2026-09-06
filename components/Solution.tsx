@@ -4,7 +4,7 @@ import { Reveal } from "./Reveal";
 
 export function Solution() {
   return (
-    <section id="what-is" className="section-alt relative overflow-hidden py-16 sm:py-24">
+    <section id="what-is" className="relative overflow-hidden bg-white py-16 sm:py-24">
       <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
         <Reveal>
           <p className="text-sm font-semibold text-brand-primary">دیابان چیست؟</p>
@@ -34,12 +34,12 @@ export function Solution() {
         </Reveal>
 
         <Reveal delay={0.1}>
-          <div className="relative mx-auto aspect-[4/5] w-full max-w-md overflow-hidden rounded-[2rem] bg-white">
+          <div className="relative mx-auto aspect-[4/5] w-full max-w-md">
             <div
-              className="absolute inset-0 opacity-80"
+              className="pointer-events-none absolute inset-[12%] rounded-full opacity-70 blur-3xl"
               style={{
                 background:
-                  "radial-gradient(circle at 30% 20%, color-mix(in oklab, var(--brand-secondary) 28%, white), transparent 55%), radial-gradient(circle at 80% 80%, color-mix(in oklab, var(--brand-primary) 22%, white), transparent 50%)",
+                  "radial-gradient(circle at 30% 20%, color-mix(in oklab, var(--brand-secondary) 32%, transparent), transparent 55%), radial-gradient(circle at 80% 80%, color-mix(in oklab, var(--brand-primary) 26%, transparent), transparent 50%)",
               }}
               aria-hidden
             />
@@ -48,7 +48,7 @@ export function Solution() {
               alt="دستگاه تست قندخون دیابان"
               fill
               sizes="(min-width: 1024px) 420px, 90vw"
-              className="object-contain p-10 sm:p-12"
+              className="object-contain p-6 sm:p-8 drop-shadow-[0_24px_48px_rgba(11,58,87,0.16)]"
               priority={false}
             />
           </div>

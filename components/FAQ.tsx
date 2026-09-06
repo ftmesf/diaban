@@ -87,7 +87,15 @@ export function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section id="faq" className="py-16 sm:py-24">
+    <section id="faq" className="relative overflow-hidden bg-brand-bg-alt py-16 sm:py-24">
+      <div
+        className="pointer-events-none absolute inset-0 -z-10"
+        style={{
+          background:
+            "radial-gradient(ellipse 70% 50% at 50% 0%, color-mix(in oklab, var(--brand-primary) 12%, transparent), transparent 55%)",
+        }}
+        aria-hidden
+      />
       <div className="mx-auto max-w-3xl px-4 sm:px-6">
         <Reveal className="text-center">
           <h2 className="text-2xl font-extrabold text-brand-fg sm:text-3xl">

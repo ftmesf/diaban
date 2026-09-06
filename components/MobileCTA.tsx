@@ -27,9 +27,9 @@ export function MobileCTA() {
         >
           <a
             href="#buy"
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-lg bg-primary text-base font-semibold text-primary-foreground"
+            className="btn-primary w-full rounded-xl"
           >
-            <ShoppingCart size={18} />
+            <ShoppingCart size={18} aria-hidden />
             خرید دستگاه دیابان
           </a>
         </motion.div>

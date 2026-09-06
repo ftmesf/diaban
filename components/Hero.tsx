@@ -1,95 +1,98 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Check, FileDown, ShoppingCart, ShieldCheck } from "lucide-react";
+import { FileDown, ShoppingCart } from "lucide-react";
 import { ProductPhoto } from "./ProductPhoto";
-import { BrandRings } from "@/components/BrandRings";
+import { LogoMark } from "@/components/Logo";
 
-const BADGES = [
-  "تاییدیه سازمان غذا و دارو",
-  "گارانتی مادام‌العمر",
-  "نوار همیشه در دسترس",
-];
+const ease = [0.22, 1, 0.36, 1] as const;
 
 export function Hero() {
   return (
-    <section id="top" className="relative overflow-hidden pt-14 pb-20 sm:pt-20 sm:pb-28">
-      <BrandRings className="pointer-events-none absolute -top-24 -right-32 -z-10 h-[520px] w-[520px] text-brand-primary opacity-[0.06]" />
-      <div className="mx-auto grid max-w-6xl items-center gap-12 px-4 sm:px-6 lg:grid-cols-2">
-        <div>
-          <motion.span
-            initial={{ opacity: 0, y: 12 }}
+    <section id="top" className="hero-atmosphere relative overflow-hidden">
+      <div
+        className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-l from-transparent via-brand-border to-transparent"
+        aria-hidden
+      />
+
+      <div className="mx-auto grid min-h-[min(88vh,860px)] max-w-6xl items-center gap-10 px-4 pb-16 pt-10 sm:gap-12 sm:px-6 sm:pb-20 sm:pt-14 lg:grid-cols-[1.05fr_0.95fr] lg:gap-8 lg:pb-24">
+        <div className="relative z-10 order-2 lg:order-1">
+          <motion.div
+            initial={{ opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-            className="inline-flex h-auto items-center gap-1.5 rounded-full border border-brand-border bg-brand-bg-alt px-3 py-1 text-xs font-semibold text-brand-primary"
+            transition={{ duration: 0.35, ease }}
+            className="flex items-center gap-3"
           >
-            <ShieldCheck size={14} />
-            دستگاه تست قندخون خانگی
-          </motion.span>
+            <LogoMark size={44} className="shrink-0 drop-shadow-sm" />
+            <div>
+              <p className="text-2xl font-extrabold tracking-tight text-brand-primary sm:text-3xl">
+                دیابان
+              </p>
+              <p className="text-xs font-medium text-muted-foreground sm:text-sm">
+                دستگاه تست قندخون خانگی · مدل SMM1000
+              </p>
+            </div>
+          </motion.div>
 
           <motion.h1
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.05, ease: [0.22, 1, 0.36, 1] }}
-            className="mt-5 text-3xl font-extrabold leading-tight text-brand-fg sm:text-4xl lg:text-5xl"
+            transition={{ duration: 0.4, delay: 0.06, ease }}
+            className="mt-6 max-w-xl text-balance text-3xl font-extrabold leading-[1.25] text-brand-fg sm:text-4xl lg:text-[2.75rem]"
           >
-            دیابان؛ دستگاه تست قندخونی که{" "}
+            قندخونی که{" "}
             <span className="brand-gradient-text">همیشه نوارش پیدا می‌شه</span>
           </motion.h1>
 
           <motion.p
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.12, ease: [0.22, 1, 0.36, 1] }}
-            className="mt-5 max-w-xl text-base leading-8 text-muted-foreground sm:text-lg"
+            transition={{ duration: 0.4, delay: 0.12, ease }}
+            className="mt-5 max-w-lg text-base leading-8 text-muted-foreground sm:text-lg"
           >
-            قندخون را هر روز بسنجید، نه فقط وقتی حال‌تان خوب نیست. دیابان با دقت بالینی،
-            نمونه‌گیری کم‌درد و نوار همیشه در دسترس، کنترل روزانه را ساده و مطمئن می‌کند.
+            دقت بالینی، نمونه‌گیری کم‌درد، و نوار همیشه در دسترس — کنترل روزانه را
+            ساده و مطمئن می‌کند.
           </motion.p>
 
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.18, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.4, delay: 0.18, ease }}
             className="mt-8 flex flex-wrap items-center gap-3"
           >
-            <a
-              href="#buy"
-              className="inline-flex h-11 items-center justify-center gap-2 rounded-lg bg-primary px-6 text-base font-medium text-primary-foreground transition hover:bg-primary/80"
-            >
-              <ShoppingCart size={18} />
+            <a href="#buy" className="btn-primary soft-shadow">
+              <ShoppingCart size={18} aria-hidden />
               خرید دستگاه دیابان
             </a>
-            <a
-              href="#specs"
-              className="inline-flex h-11 items-center justify-center gap-2 rounded-lg border border-border bg-background px-6 text-base font-medium text-foreground transition hover:bg-muted"
-            >
-              <FileDown size={18} />
-              دانلود بروشور محصول
+            <a href="#specs" className="btn-secondary soft-shadow">
+              <FileDown size={18} aria-hidden />
+              دانلود بروشور
             </a>
           </motion.div>
 
-          <motion.ul
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.24, ease: [0.22, 1, 0.36, 1] }}
-            className="mt-8 flex flex-wrap items-center gap-x-5 gap-y-2"
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.35, delay: 0.28 }}
+            className="mt-6 text-sm text-muted-foreground"
           >
-            {BADGES.map((label) => (
-              <li key={label} className="flex items-center gap-1.5 text-sm text-muted-foreground">
-                <Check size={15} className="shrink-0 text-brand-accent" strokeWidth={2.5} />
-                {label}
-              </li>
-            ))}
-          </motion.ul>
+            تاییدیه سازمان غذا و دارو · گارانتی مادام‌العمر · نوار همیشه موجود
+          </motion.p>
         </div>
 
         <motion.div
-          initial={{ opacity: 0, scale: 0.96 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.7, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+          initial={{ opacity: 0, scale: 0.96, y: 12 }}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
+          transition={{ duration: 0.55, delay: 0.08, ease }}
+          className="relative order-1 lg:order-2"
         >
-          <ProductPhoto />
+          <div
+            className="pointer-events-none absolute start-1/2 top-1/2 -z-10 h-[78%] w-[78%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/50 blur-2xl"
+            aria-hidden
+          />
+          <div className="animate-hero-float">
+            <ProductPhoto />
+          </div>
         </motion.div>
       </div>
     </section>

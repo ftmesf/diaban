@@ -12,7 +12,7 @@ const INSTITUTIONS = [
 
 export function TrustedBy() {
   return (
-    <section className="section-alt py-12 sm:py-16">
+    <section className="bg-white py-12 sm:py-16">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <Reveal>
           <p className="text-center text-xs font-semibold text-muted-foreground sm:text-sm">
