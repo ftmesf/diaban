@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { FileDown, ShoppingCart } from "lucide-react";
+import { FileText, ShoppingCart } from "lucide-react";
 import { ProductPhoto } from "./ProductPhoto";
 
 const ease = [0.22, 1, 0.36, 1] as const;
@@ -22,7 +22,7 @@ export function Hero() {
             transition={{ duration: 0.4, ease }}
             className="max-w-xl text-balance text-3xl font-extrabold leading-[1.25] text-brand-fg sm:text-4xl lg:text-[2.75rem]"
           >
-            قندخونی که{" "}
+            دیابان؛ دستگاه تست قندخونی که{" "}
             <span className="brand-gradient-text">همیشه نوارش پیدا می‌شه</span>
           </motion.h1>
 
@@ -32,8 +32,9 @@ export function Hero() {
             transition={{ duration: 0.4, delay: 0.12, ease }}
             className="mt-5 max-w-lg text-base leading-8 text-muted-foreground sm:text-lg"
           >
-            دقت بالینی، نمونه‌گیری کم‌درد، و نوار همیشه در دسترس — کنترل روزانه را
-            ساده و مطمئن می‌کند.
+            دیابان دستگاه تست قندخون خانگی با دقت بالینی تاییدشده، نمونه‌گیری
+            کم‌درد و نوار همیشه در دسترس است — کنترل روزانه قندخون را ساده و
+            مطمئن می‌کند.
           </motion.p>
 
           <motion.div
@@ -47,8 +48,8 @@ export function Hero() {
               خرید دستگاه دیابان
             </a>
             <a href="#specs" className="btn-secondary soft-shadow">
-              <FileDown size={18} aria-hidden />
-              دانلود بروشور
+              <FileText size={18} aria-hidden />
+              مشاهده مشخصات فنی
             </a>
           </motion.div>
 

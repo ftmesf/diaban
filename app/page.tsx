@@ -14,9 +14,48 @@ import { Footer } from "@/components/Footer";
 import { MobileCTA } from "@/components/MobileCTA";
 import { BackToTop } from "@/components/BackToTop";
 
+const productJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "MedicalDevice",
+  name: "دیابان",
+  alternateName: "Diaban SMM1000",
+  description:
+    "دستگاه تست قندخون دیابان با دقت بالینی تاییدشده، نمونه‌گیری کم‌درد و اتصال هوشمند به اپلیکیشن سیناکر.",
+  model: "SMM1000",
+  manufacturer: {
+    "@type": "Organization",
+    name: "شرکت راهکار هوشمند سینا",
+  },
+  brand: {
+    "@type": "Brand",
+    name: "دیابان",
+  },
+};
+
+const organizationJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "شرکت راهکار هوشمند سینا",
+  telephone: "+98-21-91002002",
+  email: "support@sinacare.ir",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "خیابان شریعتی، بالاتر از پل رومی، کوچه نبوی، پلاک ۶، واحد ۵۰۲",
+    addressCountry: "IR",
+  },
+};
+
 export default function Home() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+      />
       <Header />
       <main className="flex-1 pb-16 sm:pb-0">
         <Hero />

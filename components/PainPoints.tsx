@@ -64,8 +64,8 @@ export function PainPoints() {
               کنترل قندخون نباید این‌قدر سخت باشد
             </h2>
             <p className="mt-4 text-base leading-8 text-muted-foreground">
-              اگر دیابتی هستید یا از عزیزتان مراقبت می‌کنید، احتمالاً این نگرانی‌ها
-              برایتان آشناست.
+              اگر دیابتی هستید یا از عزیزتان مراقبت می‌کنید، احتمالاً این ۴
+              نگرانی رایج برایتان آشناست.
             </p>
             <p className="mt-8 border-s-[3px] border-brand-primary ps-4 text-base font-medium leading-8 text-brand-fg">
               دیابان دقیقاً برای حل همین دغدغه‌ها طراحی شده.

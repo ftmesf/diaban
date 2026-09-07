@@ -12,7 +12,7 @@ const quickLinks = [
 const productLinks = [
   { href: "#buy", label: "خرید دستگاه دیابان" },
   { href: "#buy", label: "خرید نوار تست" },
-  { href: "#specs", label: "دانلود بروشور محصول" },
+  { href: "#specs", label: "مشخصات فنی محصول" },
 ];
 
 export function Footer() {
@@ -23,8 +23,9 @@ export function Footer() {
           <div>
             <Logo textClassName="text-lg font-extrabold text-white" />
             <p className="mt-3 text-sm leading-7 text-brand-bg-alt/70">
-              دستگاه تست قندخون دیابان با نوار همیشه در دسترس، متعلق به
-              شرکت راهکار هوشمند سینا.
+              دیابان دستگاه تست قندخون با دقت بالینی تاییدشده، نمونه‌گیری
+              کم‌درد و اتصال هوشمند به اپلیکیشن سیناکر است؛ محصولی از شرکت
+              راهکار هوشمند سینا.
             </p>
           </div>
 

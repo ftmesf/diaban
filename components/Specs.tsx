@@ -29,7 +29,7 @@ export function Specs() {
         <Reveal>
           <p className="text-sm font-semibold text-brand-primary">مشخصات فنی</p>
           <h2 className="mt-2 text-2xl font-extrabold text-brand-fg sm:text-3xl">
-            مشخصات دستگاه دیابان
+            مشخصات فنی دستگاه دیابان چیست؟
           </h2>
           <div className="relative mt-8 hidden aspect-[3/4] w-full max-w-xs lg:block">
             <div

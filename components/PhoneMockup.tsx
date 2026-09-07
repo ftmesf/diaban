@@ -21,7 +21,7 @@ export function PhoneMockup({
             {step}
           </span>
         ) : null}
-        <div className="relative overflow-hidden rounded-[2rem] border-[6px] border-brand-fg bg-brand-fg soft-shadow-lg">
+        <div className="relative aspect-[472/1024] overflow-hidden rounded-[2rem] border-[6px] border-brand-fg bg-brand-fg soft-shadow-lg">
           <span
             aria-hidden
             className="absolute left-1/2 top-0 z-10 h-4 w-20 -translate-x-1/2 rounded-b-xl bg-brand-fg"
@@ -29,9 +29,9 @@ export function PhoneMockup({
           <Image
             src={src}
             alt={alt}
-            width={472}
-            height={1024}
-            className="h-auto w-full"
+            fill
+            sizes="220px"
+            className="object-cover"
           />
         </div>
       </div>
