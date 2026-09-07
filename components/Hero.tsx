@@ -3,7 +3,6 @@
 import { motion } from "framer-motion";
 import { FileDown, ShoppingCart } from "lucide-react";
 import { ProductPhoto } from "./ProductPhoto";
-import { LogoMark } from "@/components/Logo";
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
@@ -17,28 +16,11 @@ export function Hero() {
 
       <div className="mx-auto grid min-h-[min(88vh,860px)] max-w-6xl items-center gap-10 px-4 pb-16 pt-10 sm:gap-12 sm:px-6 sm:pb-20 sm:pt-14 lg:grid-cols-[1.05fr_0.95fr] lg:gap-8 lg:pb-24">
         <div className="relative z-10 order-2 lg:order-1">
-          <motion.div
-            initial={{ opacity: 0, y: 14 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.35, ease }}
-            className="flex items-center gap-3"
-          >
-            <LogoMark size={44} className="shrink-0 drop-shadow-sm" />
-            <div>
-              <p className="text-2xl font-extrabold tracking-tight text-brand-primary sm:text-3xl">
-                دیابان
-              </p>
-              <p className="text-xs font-medium text-muted-foreground sm:text-sm">
-                دستگاه تست قندخون خانگی · مدل SMM1000
-              </p>
-            </div>
-          </motion.div>
-
           <motion.h1
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4, delay: 0.06, ease }}
-            className="mt-6 max-w-xl text-balance text-3xl font-extrabold leading-[1.25] text-brand-fg sm:text-4xl lg:text-[2.75rem]"
+            transition={{ duration: 0.4, ease }}
+            className="max-w-xl text-balance text-3xl font-extrabold leading-[1.25] text-brand-fg sm:text-4xl lg:text-[2.75rem]"
           >
             قندخونی که{" "}
             <span className="brand-gradient-text">همیشه نوارش پیدا می‌شه</span>
@@ -70,14 +52,26 @@ export function Hero() {
             </a>
           </motion.div>
 
-          <motion.p
+          <motion.ul
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.35, delay: 0.28 }}
-            className="mt-6 text-sm text-muted-foreground"
+            className="mt-6 flex flex-col gap-2 text-sm text-muted-foreground"
           >
-            تاییدیه سازمان غذا و دارو · گارانتی مادام‌العمر · نوار همیشه موجود
-          </motion.p>
+            {[
+              "تاییدیه سازمان غذا و دارو",
+              "گارانتی مادام‌العمر",
+              "نوار همیشه موجود",
+            ].map((item) => (
+              <li key={item} className="flex items-center gap-2">
+                <span
+                  className="size-1.5 shrink-0 rounded-full bg-brand-secondary"
+                  aria-hidden
+                />
+                {item}
+              </li>
+            ))}
+          </motion.ul>
         </div>
 
         <motion.div

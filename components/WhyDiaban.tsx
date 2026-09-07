@@ -10,6 +10,12 @@ const FEATURES = [
     metric: "۵ ثانیه",
     metricLabel: "تا نتیجه",
     latin: false,
+    accent: {
+      icon: "from-[#007dc5] to-[#00a0d8]",
+      chip: "bg-brand-primary/8 text-brand-primary border-brand-primary/15",
+      bar: "from-brand-primary to-brand-secondary",
+      glow: "bg-brand-primary/15",
+    },
   },
   {
     icon: Droplet,
@@ -18,6 +24,12 @@ const FEATURES = [
     metric: "۰٫۵ µl",
     metricLabel: "حجم نمونه",
     latin: false,
+    accent: {
+      icon: "from-[#00b7a8] to-[#2dd4bf]",
+      chip: "bg-brand-secondary/10 text-[#0b7a6c] border-brand-secondary/20",
+      bar: "from-brand-secondary to-brand-accent",
+      glow: "bg-brand-secondary/15",
+    },
   },
   {
     icon: Smartphone,
@@ -26,6 +38,12 @@ const FEATURES = [
     metric: "OCR",
     metricLabel: "ثبت هوشمند",
     latin: true,
+    accent: {
+      icon: "from-[#5f8f1f] to-[#7cb342]",
+      chip: "bg-brand-accent/12 text-brand-accent-strong border-brand-accent/25",
+      bar: "from-brand-accent to-brand-secondary",
+      glow: "bg-brand-accent/20",
+    },
   },
   {
     icon: Store,
@@ -34,6 +52,12 @@ const FEATURES = [
     metric: "همیشه",
     metricLabel: "موجودی نوار",
     latin: false,
+    accent: {
+      icon: "from-[#0b3a57] to-[#007dc5]",
+      chip: "bg-brand-fg/5 text-brand-fg border-brand-border",
+      bar: "from-brand-fg to-brand-primary",
+      glow: "bg-brand-primary/12",
+    },
   },
 ];
 
@@ -62,40 +86,50 @@ export function WhyDiaban() {
         </Reveal>
 
         <RevealStagger className="mt-12 grid gap-4 sm:grid-cols-2 sm:gap-5">
-          {FEATURES.map(({ icon: Icon, title, desc, metric, metricLabel, latin }) => (
+          {FEATURES.map(({ icon: Icon, title, desc, metric, metricLabel, latin, accent }) => (
             <RevealItem key={title}>
-              <article className="group soft-surface relative flex h-full flex-col overflow-hidden rounded-[1.35rem] bg-white p-6 transition duration-200 hover:-translate-y-0.5 hover:border-brand-primary/30 hover:shadow-[0_8px_28px_rgba(0,125,197,0.1)] sm:p-7">
+              <article className="group relative flex h-full flex-col overflow-hidden rounded-[1.4rem] border border-brand-border/65 bg-white p-6 shadow-[0_2px_8px_rgba(11,58,87,0.04)] transition duration-200 hover:-translate-y-1 hover:border-brand-primary/25 hover:shadow-[0_16px_36px_rgba(0,125,197,0.12)] sm:p-7">
                 <div
-                  className="pointer-events-none absolute -left-8 -top-8 size-28 rounded-full bg-brand-primary/[0.05] blur-2xl transition duration-200 group-hover:bg-brand-secondary/[0.1]"
+                  className={`pointer-events-none absolute -end-10 -top-10 size-36 rounded-full ${accent.glow} blur-3xl transition duration-300 group-hover:scale-110`}
+                  aria-hidden
+                />
+                <div
+                  className={`absolute inset-x-0 top-0 h-[3px] bg-gradient-to-l ${accent.bar} opacity-80`}
                   aria-hidden
                 />
 
                 <div className="relative flex items-start justify-between gap-4">
-                  <span className="brand-gradient-bg flex size-12 items-center justify-center rounded-2xl text-white soft-shadow">
+                  <span
+                    className={`flex size-12 items-center justify-center rounded-2xl bg-gradient-to-br text-white shadow-[0_8px_18px_rgba(11,58,87,0.16)] ${accent.icon}`}
+                  >
                     <Icon size={20} strokeWidth={1.75} aria-hidden />
                   </span>
-                  <div className="text-end">
+                  <div
+                    className={`rounded-2xl border px-3.5 py-2 text-end ${accent.chip}`}
+                  >
                     <p
                       dir={latin ? "ltr" : "rtl"}
-                      className={`text-2xl font-extrabold tracking-tight text-brand-fg sm:text-[1.75rem] ${
+                      className={`text-xl font-extrabold tracking-tight sm:text-2xl ${
                         latin ? "font-readout font-semibold" : "font-sans"
                       }`}
                     >
                       {metric}
                     </p>
-                    <p className="mt-1 text-xs font-medium text-muted-foreground">
+                    <p className="mt-0.5 text-[11px] font-medium opacity-80">
                       {metricLabel}
                     </p>
                   </div>
                 </div>
 
-                <h3 className="relative mt-6 text-lg font-bold leading-7 text-brand-fg">{title}</h3>
+                <h3 className="relative mt-6 text-lg font-bold leading-7 text-brand-fg">
+                  {title}
+                </h3>
                 <p className="relative mt-2 flex-1 text-sm leading-7 text-muted-foreground">
                   {desc}
                 </p>
 
                 <span
-                  className="relative mt-6 h-0.5 w-12 rounded-full bg-gradient-to-l from-brand-secondary to-brand-primary transition-all duration-200 group-hover:w-20"
+                  className={`relative mt-6 h-0.5 w-10 rounded-full bg-gradient-to-l ${accent.bar} transition-all duration-200 group-hover:w-16`}
                   aria-hidden
                 />
               </article>

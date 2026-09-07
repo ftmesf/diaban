@@ -1,4 +1,4 @@
-import { ArrowLeft, Scan } from "lucide-react";
+import { ArrowUpLeft, Scan, Smartphone } from "lucide-react";
 import { PhoneMockup } from "@/components/PhoneMockup";
 import { Reveal } from "./Reveal";
 
@@ -78,10 +78,23 @@ export function AppCompanion() {
             href="https://sinacare.ir/"
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-primary soft-shadow-lg"
+            className="group btn-primary soft-shadow-lg pe-2.5"
           >
             مسیر ثبت در اپ را ببینید
-            <ArrowLeft size={18} aria-hidden />
+            <span className="relative ms-1 inline-flex size-9 items-center justify-center rounded-lg bg-white/18 ring-1 ring-white/25 transition duration-200 group-hover:bg-white/25 group-hover:ring-white/40">
+              <Smartphone
+                size={15}
+                strokeWidth={2}
+                className="absolute opacity-90 transition duration-200 group-hover:opacity-0 group-hover:scale-75"
+                aria-hidden
+              />
+              <ArrowUpLeft
+                size={16}
+                strokeWidth={2.25}
+                className="absolute opacity-0 scale-75 transition duration-200 group-hover:opacity-100 group-hover:scale-100"
+                aria-hidden
+              />
+            </span>
           </a>
         </Reveal>
       </div>

@@ -7,7 +7,9 @@ export function Solution() {
     <section id="what-is" className="relative overflow-hidden bg-white py-16 sm:py-24">
       <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
         <Reveal>
-          <p className="text-sm font-semibold text-brand-primary">دیابان چیست؟</p>
+          <p className="text-base font-semibold text-brand-primary sm:text-lg">
+            دیابان چیست؟
+          </p>
           <h2 className="mt-2 text-2xl font-extrabold leading-relaxed text-brand-fg sm:text-3xl">
             دستگاه تست قندخون خانگی، طراحی‌شده برای نیاز واقعی بیماران در ایران
           </h2>

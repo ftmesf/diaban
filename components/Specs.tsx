@@ -31,9 +31,6 @@ export function Specs() {
           <h2 className="mt-2 text-2xl font-extrabold text-brand-fg sm:text-3xl">
             مشخصات دستگاه دیابان
           </h2>
-          <p className="mt-3 text-base leading-8 text-muted-foreground">
-            مدل SMM1000 — جزئیات فنی برای پزشک، بیمار و خریدار.
-          </p>
           <div className="relative mt-8 hidden aspect-[3/4] w-full max-w-xs lg:block">
             <div
               className="pointer-events-none absolute inset-[15%] rounded-full bg-brand-primary/12 blur-3xl"
